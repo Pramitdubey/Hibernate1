@@ -6,12 +6,11 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table (name = "EmployeeTable")
 public class Employee {
     @Id
     private int empId;
     private String name;
-    private String address;
+    private Address address;
 
     @Override
     public String toString() {
@@ -22,10 +21,10 @@ public class Employee {
                 '}';
     }
 
-    public Employee(){
-
+    public Employee() {
     }
-    public Employee(int empId, String name, String address) {
+
+    public Employee(int empId, String name, Address address) {
         this.empId = empId;
         this.name = name;
         this.address = address;
@@ -47,11 +46,11 @@ public class Employee {
         this.name = name;
     }
 
-    public String getAddress() {
+    public Address getAddress() {
         return address;
     }
 
-    public void setAddress(String address) {
+    public void setAddress(Address address) {
         this.address = address;
     }
 }
