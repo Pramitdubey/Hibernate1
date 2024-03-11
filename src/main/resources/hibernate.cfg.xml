@@ -8,7 +8,7 @@
 <!--        <property name="hibernate.connection.username">${env.DB_USERNAME}</property>-->
 <!--        <property name="hibernate.connection.password">${env.DB_PASSWORD}</property>-->
         <property name="hbm2ddl.auto">create</property>
-        <mapping class="org.example.Employee"></mapping>
-        <mapping class="org.example.Address"></mapping>
+        <mapping class="org.example.Student"></mapping>
+        <mapping class="org.example.Student_gfg_detail"></mapping>
     </session-factory>
 </hibernate-configuration>

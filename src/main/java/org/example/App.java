@@ -16,9 +16,6 @@ public class App {
         String username = dotenv.get("DB_USERNAME");
         String password = dotenv.get("DB_PASSWORD");
 
-//        // Use the variables in your application
-//        System.out.println("DB Username: " + username);
-//        System.out.println("DB Password: " + password);
 
         Configuration configuration = new Configuration()
                 .setProperty("hibernate.connection.username", username)
@@ -26,12 +23,15 @@ public class App {
                 .configure();
         SessionFactory sessionFactory = configuration.buildSessionFactory();
 
-//        SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
-        Address address=new Address("Street 1", "Delhi");
-        Employee employee=new Employee(1001,"Vijay",address);
+        Student_gfg_detail student_gfg_detail=new Student_gfg_detail();
+        student_gfg_detail.setGfg_id(101);
+        student_gfg_detail.setCollege("LPU");
+        student_gfg_detail.setNo_of_problem_solved(20);
+
+        Student student=new Student(1,"ajay","sharma","ajaysharma@gmail.com",student_gfg_detail);
         Session session= sessionFactory.openSession();
         Transaction transaction= session.beginTransaction();
-        session.save(employee);
+        session.save(student);
         transaction.commit();
         session.close();
         sessionFactory.close();
